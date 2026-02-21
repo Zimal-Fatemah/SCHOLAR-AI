@@ -3,7 +3,7 @@
 An AI-powered study assistant built with React and Google Gemini. Upload a PDF, ask questions about it, take a quiz on the content, or just chat about any topic you're studying.
 
 ![React](https://img.shields.io/badge/React-19.1.1-61DAFB?logo=react&logoColor=white)
-![Gemini AI](https://img.shields.io/badge/Gemini-1.5%20Flash-4285F4?logo=google&logoColor=white)
+![Gemini AI](https://img.shields.io/badge/Gemini-2.5%20Flash-4285F4?logo=google&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
