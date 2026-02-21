@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# 🎓 ScholarAI - AI-Powered Study Assistant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An intelligent study companion powered by Google's Gemini AI that helps you learn, understand concepts, analyze PDFs, and test your knowledge with interactive quizzes.
 
-## Available Scripts
+![ScholarAI](https://img.shields.io/badge/React-19.1.1-blue) ![Gemini-AI](https://img.shields.io/badge/Gemini-AI-green) ![License](https://img.shields.io/badge/license-MIT-blue)
 
-In the project directory, you can run:
+## ✨ Features
+
+- 🤖 **AI Chat Interface** - Conversational learning with Google Gemini AI
+- 📄 **PDF Analysis** - Upload and ask questions about your study materials
+- 🎤 **Voice Input** - Speak your questions naturally
+- 🎯 **Quiz Generator** - Auto-generate quizzes from content or conversations
+- 💬 **Chat History** - Save and revisit your study sessions
+- 🎨 **Beautiful UI** - Clean, modern interface with Tailwind CSS
+
+## 🚀 Quick Start
+
+### 1. Get Your Free API Key
+
+1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Click "Create API Key"
+4. Copy your API key
+
+### 2. Install & Run
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd my-app
+
+# Install dependencies
+npm install
+
+# Start the app
+npm start
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000)
+
+### 3. Enter Your API Key
+
+When the app loads, you'll see a settings panel:
+- Paste your API key
+- Click "Save"
+- Start chatting!
+
+Your API key is stored securely in your browser's localStorage and never shared with anyone except Google's Gemini API.
+
+## 📦 Alternative Setup (Optional)
+
+If you prefer, you can add your API key to a `.env.local` file:
+
+```bash
+# Copy the example file
+cp .env.example .env.local
+
+# Edit .env.local and add your key
+REACT_APP_GEMINI_API_KEY=your_api_key_here
+```
+
+## 🛠️ Available Scripts
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000)
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm test`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Launches the test runner in interactive watch mode.
 
-### `npm run eject`
+## 📖 How to Use
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. **Chat with AI**
+Simply type your questions or study topics and get detailed explanations.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. **Upload PDFs**
+Click the 📎 attachment icon to upload a PDF. Ask questions about the document content!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. **Voice Input**
+Click the 🎤 microphone icon to speak your questions instead of typing.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 4. **Generate Quizzes**
+Upload a PDF or have a conversation, then click "Generate Quiz" to test your knowledge!
 
-## Learn More
+### 5. **Save Chat History**
+Your conversations are automatically saved. Access them from the sidebar.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔒 Security & Privacy
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Your API key is stored only in your browser's localStorage
+- No data is sent to any server except Google's Gemini API
+- Your conversations are private and stored locally
+- See [SECURITY.md](SECURITY.md) for detailed security information
 
-### Code Splitting
+## 🚀 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Deploy to Vercel, Netlify, or any static hosting service:
 
-### Analyzing the Bundle Size
+```bash
+# Build for production
+npm run build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Deploy the build folder
+```
 
-### Making a Progressive Web App
+See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for detailed deployment instructions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🛡️ API Key Best Practices
 
-### Advanced Configuration
+1. **Never commit** your `.env.local` file to version control
+2. **Set API restrictions** in Google Cloud Console
+3. **Monitor usage** regularly
+4. **Rotate keys** periodically
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 License
 
-### Deployment
+MIT License - Feel free to use this project for your own learning!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🤝 Contributing
 
-### `npm run build` fails to minify
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 💡 Tips
+
+- Start with simple questions to get familiar with the AI
+- Upload study materials as PDFs for context-aware answers
+- Use quizzes to test your understanding
+- Save important conversations for later review
+
+## 🐛 Troubleshooting
+
+**"API key not found" error?**
+- Make sure you've entered your API key and clicked "Save"
+- Check that your API key is valid at [Google AI Studio](https://makersuite.google.com/app/apikey)
+
+**PDF upload not working?**
+- Ensure the file is a valid PDF
+- Maximum file size is 10MB
+- Make sure the PDF contains extractable text (not just images)
+
+**Voice input not working?**
+- Allow microphone permissions in your browser
+- Use Chrome or Edge for best compatibility
+
+## 📧 Support
+
+Need help? Check the [SECURITY_AUDIT_REPORT.md](SECURITY_AUDIT_REPORT.md) for detailed information about the project.
+
+---
+
+Built with ❤️ using React and Google Gemini AI
