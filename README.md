@@ -28,6 +28,13 @@ An AI-powered study assistant built with React and Google Gemini. Upload a PDF, 
 - **localStorage** for chat persistence (no backend required)
 
 ---
+## Demo
+
+<img width="1887" height="868" alt="image" src="https://github.com/user-attachments/assets/34a179b9-3c7a-4d9e-90ce-206a2d4e2c9f" />
+
+## Personalized Quiz according to your study material
+
+<img width="1908" height="880" alt="image" src="https://github.com/user-attachments/assets/276e682f-3492-4299-87aa-65da879a2ee6" />
 
 ## Getting Started
 
@@ -78,7 +85,7 @@ cp .env.example .env.local
 - Voice input works best in Chrome and Edge; Firefox support is limited
 - PDF text extraction requires PDFs with selectable text — scanned image PDFs won't work
 - The Gemini free tier allows up to 1,500 requests/day and 60 requests/minute
-- All data is stored in the browser; clearing localStorage will erase chat history
+- All data is stored in the browser; clearing localStorage will erase chat history.
 
 ---
 
