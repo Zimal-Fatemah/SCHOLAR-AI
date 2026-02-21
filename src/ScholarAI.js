@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 import {
   Settings,
@@ -35,11 +34,10 @@ export default function ScholarAI() {
   const [showSidebar, setShowSidebar] = useState(true);
   const [typewriterText, setTypewriterText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const messagesEndRef = useRef(null);
   const chatContainerRef = useRef(null);
   
   // PDF Upload
-  const { pdfText, pdfName, isLoading: pdfLoading, error: pdfError, handleUpload, clearPdf } = usePdfUpload();
+  const { pdfText, pdfName, isLoading: pdfLoading, handleUpload, clearPdf } = usePdfUpload();
   
   // Voice Input
   const { startListening, stopListening, isListening, transcript, resetTranscript } = useSpeechToText();
@@ -218,10 +216,6 @@ ${messageContent}
     setIsTyping(false);
   };
 
-  const clearChat = () => {
-    setMessages([]);
-  };
-
   const handleSuggestionClick = suggestion => {
     setInput(suggestion);
   };
@@ -277,6 +271,7 @@ ${messageContent}
     if (messages.length > 0) {
       saveCurrentChat();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages]);
 
   const handleVoiceToggle = () => {

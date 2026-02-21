@@ -17,6 +17,34 @@ const QuizModal = ({
 
   const currentQuestion = questions[currentQuestionIndex];
 
+  const moveToNext = React.useCallback(() => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(prev => prev + 1);
+      setSelectedAnswer(null);
+      setIsAnswered(false);
+      setTimeLeft(timePerQuestion);
+    } else {
+      setShowResults(true);
+      if (onComplete) {
+        onComplete(score + (selectedAnswer === currentQuestion.correctAnswer ? 1 : 0), questions.length);
+      }
+    }
+  }, [currentQuestionIndex, questions.length, timePerQuestion, onComplete, score, selectedAnswer, currentQuestion.correctAnswer]);
+
+  const handleTimeout = React.useCallback(() => {
+    setIsAnswered(true);
+    setAnswers(prev => [...prev, { 
+      question: currentQuestion.question,
+      selected: null,
+      correct: currentQuestion.correctAnswer,
+      isCorrect: false
+    }]);
+    
+    setTimeout(() => {
+      moveToNext();
+    }, 2000);
+  }, [currentQuestion, moveToNext]);
+
   useEffect(() => {
     if (showResults || isAnswered) return;
 
@@ -31,21 +59,7 @@ const QuizModal = ({
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [currentQuestionIndex, isAnswered, showResults]);
-
-  const handleTimeout = () => {
-    setIsAnswered(true);
-    setAnswers(prev => [...prev, { 
-      question: currentQuestion.question,
-      selected: null,
-      correct: currentQuestion.correctAnswer,
-      isCorrect: false
-    }]);
-    
-    setTimeout(() => {
-      moveToNext();
-    }, 2000);
-  };
+  }, [currentQuestionIndex, isAnswered, showResults, handleTimeout]);
 
   const handleAnswerSelect = (optionIndex) => {
     if (isAnswered) return;
@@ -69,20 +83,6 @@ const QuizModal = ({
     setTimeout(() => {
       moveToNext();
     }, 2000);
-  };
-
-  const moveToNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(prev => prev + 1);
-      setSelectedAnswer(null);
-      setIsAnswered(false);
-      setTimeLeft(timePerQuestion);
-    } else {
-      setShowResults(true);
-      if (onComplete) {
-        onComplete(score + (selectedAnswer === currentQuestion.correctAnswer ? 1 : 0), questions.length);
-      }
-    }
   };
 
   const getOptionClass = (index) => {
